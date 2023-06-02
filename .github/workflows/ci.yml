@@ -91,4 +91,26 @@ jobs:
 
       - name: Execute test program
         run: ./asc
+
+  ToyRcpp:
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: ./ToyRcpp
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install dependency R pkgs
+        run: sudo R -e 'install.packages(c("Rcpp", "numDeriv", "RcppArmadillo", "RcppEigen"))'
+
+      # .r: R script with example calls of C++ functions
+      # .cpp: C++ functions with optimisation-related algorithms & algebra methods
+      - name: Execute Rcpp test script
+        run: Rscript Rcpp.R
+      - name: Execute RcppArmadillo test script
+        run: Rscript RcppArmadillo.R
+      - name: Execute RcppEigen test script
+        run: Rscript RcppEigen.R
 ...
