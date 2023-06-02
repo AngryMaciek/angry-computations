@@ -111,4 +111,6 @@ jobs:
         run: Rscript Rcpp.R
       - name: Execute RcppArmadillo test script
         run: Rscript RcppArmadillo.R
+      - name: Execute RcppEigen test script
+        run: Rscript RcppEigen.R
 ...
