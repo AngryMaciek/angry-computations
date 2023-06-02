@@ -56,4 +56,39 @@ jobs:
       # remove installed files
       - name: uninstall (make)
         run: make uninstall
+
+  AngryStatisticalComputing:
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: ./angry-statistical-computing
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      # Armadillo requires BLAS and LAPACK for marix operations
+      # cmake is required to build Armadillo
+      - name: Install BLAS & LAPACK & cmake
+        run: sudo apt install cmake libopenblas-dev liblapack-dev
+
+      - name: Download Armadillo
+        run: |
+          wget https://sourceforge.net/projects/arma/files/armadillo-12.4.0.tar.xz
+          tar -xf armadillo-12.4.0.tar.xz
+
+      - name: build & install Armadillo
+        run: |
+          cd armadillo-12.4.0
+          cmake .
+          make
+          sudo make install
+
+      # compile C++ tests
+      # (all descriptions inside the source code)
+      - name: Compile examples
+        run: g++ main.cpp -o asc -DARMA_DONT_USE_WRAPPER -lopenblas -llapack -std=c++11 -O2
+
+      - name: Execute test program
+        run: ./asc
 ...
