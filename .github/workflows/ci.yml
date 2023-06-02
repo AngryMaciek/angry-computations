@@ -27,6 +27,12 @@ jobs:
         run: make
       - name: install (make)
         run: make install
+      - name: clean (make)
+        run: make clean
+      - name: compile tests
+        run: gcc test.c -I ~/lib/include/ ~/lib/lib/numDeriv.a -o numDeriv -std=c99 -lm
+      - name: install (make)
+        run: ./numDeriv
       - name: uninstall (make)
         run: make uninstall
 ...
