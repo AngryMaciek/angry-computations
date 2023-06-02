@@ -91,4 +91,21 @@ jobs:
 
       - name: Execute test program
         run: ./asc
+
+
+  ToyRcpp:
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: ./ToyRcpp
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install dependency R pkgs
+        run: R -e 'install.packages(c("Rcpp", "numDeriv"))'
+
+      - name: Execute R test script
+        run: Rscript test.R
 ...
