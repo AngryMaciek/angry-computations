@@ -70,6 +70,13 @@ jobs:
       # Armadillo requires BLAS and LAPACK for marix operations
       - name: Install BLAS & LAPACK & cmake
         run: sudo apt install cmake libopenblas-dev liblapack-dev
+
+      - name: Download Armadillo
+        run: |
+          wget https://sourceforge.net/projects/arma/files/armadillo-12.4.0.tar.xz
+          tar -xf armadillo-12.4.0.tar.xz
+          ls
+
 ...
 
 
