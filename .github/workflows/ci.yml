@@ -106,7 +106,9 @@ jobs:
         run: sudo R -e 'install.packages(c("Rcpp", "numDeriv", "RcppArmadillo", "RcppEigen"))'
 
       # .r: R script with example calls of C++ functions
-      # .cpp: C++ functions with optimisation-related algorithms
-      - name: Execute R test script
+      # .cpp: C++ functions with optimisation-related algorithms & algebra methods
+      - name: Execute Rcpp test script
         run: Rscript Rcpp.R
+      - name: Execute RcppArmadillo test script
+        run: Rscript RcppArmadillo.R
 ...
