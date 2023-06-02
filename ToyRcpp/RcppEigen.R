@@ -1,6 +1,6 @@
 # https://gallery.rcpp.org/articles/eigen-eigenvalues
 
-library(RcppEigen)
+library(Rcpp)
 
 sourceCpp("RcppEigen.cpp")
 
