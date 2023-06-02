@@ -9,7 +9,7 @@ X <- matrix(rnorm(4*4), 4, 4)
 Z <- X %*% t(X)
 
 # R function
-print(eigen(Z))
+print(rev(eigen(Z)$values))
 
 # Eigen function
 print(getEigenValues(Z))
