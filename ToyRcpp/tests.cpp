@@ -5,7 +5,7 @@
 #include <Rcpp.h>
 #include "../angry-statistical-computing/modoptim.c"
 extern "C" {
-#include "zeroin.c"
+#include "../angry-statistical-computing/zeroin.c"
 }
 using namespace Rcpp;
 
