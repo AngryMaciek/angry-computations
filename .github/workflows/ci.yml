@@ -75,16 +75,18 @@ jobs:
         run: |
           wget https://sourceforge.net/projects/arma/files/armadillo-12.4.0.tar.xz
           tar -xf armadillo-12.4.0.tar.xz
-          ls
+
+      - name: build & install Armadillo
+        run: |
+          cd armadillo-12.4.0
+          cmake .
+          make
+          make install
 
 ...
 
 
-#$ # Download and extract the latest table release of Armadillo
-#$ # Assuming it is in: $HOME/Downloads/arma: install the library
-#$ cd $HOME/Downloads/arma
-#$ cmake .
-#$ make
+
 #$ sudo make install
 #$ # Compile and run the examples in this repository
 #$ # Assuming it is in: $HOME/angry-statistical-computing: install the library
@@ -94,6 +96,4 @@ jobs:
 
 
 #| main.cpp | main C++ source file with all the examples |
-#| numDeriv.c | C library with functions to approximate gradient and hessian of a given multivariate function |
-#| zeroin.c | C routine for root finding of an univariate function |
-#| modified_optim.c | modified version of the C file with a method to minimize a given multivariate function |
+
