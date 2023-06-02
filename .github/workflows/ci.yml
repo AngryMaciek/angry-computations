@@ -15,6 +15,7 @@ jobs:
 
   numDerivc:
     runs-on: ubuntu-22.04
+    working-directory: ./numDeriv.c
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
