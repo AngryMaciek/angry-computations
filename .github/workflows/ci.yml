@@ -1,0 +1,29 @@
+###############################################################################
+#
+#   AUTHOR: Maciej_Bak
+#   CONTACT: wsciekly.maciek@gmail.com
+#   CREATED: 29-05-2023
+#   LICENSE: Apache_2.0
+#
+###############################################################################
+---
+name: ci
+
+on: push
+
+jobs:
+
+  numDeriv.c:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: configure (make)
+        run: ./configure
+      - name: build (make)
+        run: make
+      - name: install (make)
+        run: make install
+      - name: uninstall (make)
+        run: make uninstall
+...
