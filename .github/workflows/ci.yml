@@ -81,19 +81,13 @@ jobs:
           cd armadillo-12.4.0
           cmake .
           make
-          make install
+          sudo make install
 
+      # compile C++ tests
+      # (all descriptions inside the source code)
+      - name: Compile examples
+        run: g++ main.cpp -o asc -DARMA_DONT_USE_WRAPPER -lopenblas -llapack -std=c++11 -O2
+
+      - name: Execute test program
+        run: ./asc
 ...
-
-
-
-#$ sudo make install
-#$ # Compile and run the examples in this repository
-#$ # Assuming it is in: $HOME/angry-statistical-computing: install the library
-#$ cd $HOME/angry-statistical-computing
-#$ g++ main.cpp -o test -DARMA_DONT_USE_WRAPPER -lopenblas -llapack -std=c++11 -O2
-#$ ./test
-
-
-#| main.cpp | main C++ source file with all the examples |
-
