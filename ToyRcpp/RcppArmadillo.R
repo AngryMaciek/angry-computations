@@ -1,6 +1,6 @@
 # https://gallery.rcpp.org/articles/armadillo-eigenvalues
 
-library(RcppArmadillo)
+library(Rcpp)
 
 sourceCpp("RcppArmadillo.cpp")
 
