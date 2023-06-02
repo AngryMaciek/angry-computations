@@ -19,20 +19,41 @@ jobs:
       run:
         working-directory: ./numDeriv.c
     steps:
+
       - name: Checkout Repository
         uses: actions/checkout@v2
+
+      # generate a full Makefile.
+      # By default the library will be installed under `~/lib`
+      # (compiled file under `~/lib/lib`, header file under `~/lib/include`).
+      # The prefix path might be adjusted in the configure file if needed.
       - name: configure (make)
         run: ./configure
+
+      # build a static library
       - name: build (make)
         run: make
+
+      # copy the static library to the lib directory
       - name: install (make)
         run: make install
+
+      # remove build files from the working directory
       - name: clean (make)
         run: make clean
+
+      # provide information to the linker: full path to the static library.
+      # As the library requires math.h it is necessary to provide `-lm` to the linker.
+      # Also, the library is written in C99 standard.
       - name: compile tests
         run: gcc test.c -I ~/lib/include/ ~/lib/lib/numDeriv.a -o numDeriv -std=c99 -lm
-      - name: install (make)
+
+      # Results have been compared to exact solutions and approximations calculated in R.
+      # (expected values are commented in the source code)
+      - name: execute tests
         run: ./numDeriv
+
+      # remove installed files
       - name: uninstall (make)
         run: make uninstall
 ...
