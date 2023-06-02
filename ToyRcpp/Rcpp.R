@@ -69,7 +69,7 @@ print(x)
 x = matrix(sample(100), 10)
 print(sum_rows(x))
 
-sourceCpp("tests.cpp")
+sourceCpp("Rcpp.cpp")
 
 ### ROOT APROXIMATION FOR AN UNIVARIATE FUNCTION ###
 #
