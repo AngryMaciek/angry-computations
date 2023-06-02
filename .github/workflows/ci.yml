@@ -92,7 +92,6 @@ jobs:
       - name: Execute test program
         run: ./asc
 
-
   ToyRcpp:
     runs-on: ubuntu-22.04
     defaults:

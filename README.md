@@ -1,6 +1,6 @@
 [![ci](https://github.com/AngryMaciek/angry-computations/workflows/ci/badge.svg?branch=master)](https://github.com/AngryMaciek/angry-computations/actions?query=workflow%3Aci)
 
-# Angry Computations
+# Angry Computations 😡
 
 For specific instructions on how to execute test programs please see the [ci workflow file](https://github.com/AngryMaciek/angry-computations/blob/master/.github/workflows/ci.yml).
 
