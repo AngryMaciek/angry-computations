@@ -3,7 +3,7 @@
 // 4.06.2019
 
 #include <Rcpp.h>
-#include "modoptim.c"
+#include "../angry-statistical-computing/modoptim.c"
 extern "C" {
 #include "zeroin.c"
 }
