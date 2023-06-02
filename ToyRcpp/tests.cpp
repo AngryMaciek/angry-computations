@@ -3,7 +3,7 @@
 // 4.06.2019
 
 #include <Rcpp.h>
-#include "modified_optim.c"
+#include "modoptim.c"
 extern "C" {
 #include "zeroin.c"
 }
