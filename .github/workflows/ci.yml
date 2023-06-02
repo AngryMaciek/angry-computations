@@ -105,6 +105,8 @@ jobs:
       - name: Install dependency R pkgs
         run: sudo R -e 'install.packages(c("Rcpp", "numDeriv"))'
 
+      # .r: R script with example calls of C++ functions
+      # .cpp: C++ functions with optimisation-related algorithms
       - name: Execute R test script
         run: Rscript tests.R
 ...

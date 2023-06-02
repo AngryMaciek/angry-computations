@@ -11,8 +11,10 @@ This directory contains a reimplementation of the well-known [numDeriv package](
 * Objective functions can have a vector argument but scalar value is a requirement ($f:R^N -> R$). As a result, jacobian function is not implemented.  
 
 ### angry-statistical-computing
-
-Toy exampes of how to use C++ [Armadillo](http://arma.sourceforge.net/) library for linear algebra and simple statistics as well as other custom functions useful for statistical modelling. These resources should be enough to implement complex Bayesian models, fit the parameters efficiently (likelihood optimization) and minimize the runtime on big datasets. Functions' logic and sygnatures are described within the main source file of this repository. Most notably, we shall use three additional C files with external procedures:
+Toy exampes of how to use C++ [Armadillo](http://arma.sourceforge.net/) library for linear algebra and simple statistics as well as other custom functions useful for statistical modelling. These resources should be enough to implement complex Bayesian models, fit the parameters efficiently (likelihood optimization) and minimize the runtime on big datasets. Functions' logic and sygnatures are described within the main source file of this directory. Most notably, we shall use three additional C files with external procedures:
 * numDeriv.c: as above, functions to approximate gradient and hessian of a given multivariate function
 * zeroin.c: root finding for an univariate function
 * modoptim.c: a modified version of the C file with a method to minimize a given multivariate function
+
+### ToyRcpp
+This is a very small directory that presents the libraries needed for efficient statistical computing in [R interfacing to C++](http://adv-r.had.co.nz/Rcpp.html). Functions presented are useful to build statistical models based on likelihood and optimize their parameters. These techniques should be enough to implement complex Bayesian models, fit the parameters efficiently and optimize the runtime on big datasets. Functions' logic and sygnatures are described within the source code.
