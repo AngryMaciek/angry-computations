@@ -56,4 +56,37 @@ jobs:
       # remove installed files
       - name: uninstall (make)
         run: make uninstall
+
+  AngryStatisticalComputing:
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: ./angry-statistical-computing
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      # Armadillo requires BLAS and LAPACK for marix operations
+      - name: Install BLAS & LAPACK & cmake
+        run: sudo apt install cmake libopenblas-dev liblapack-dev
 ...
+
+
+#$ # Download and extract the latest table release of Armadillo
+#$ # Assuming it is in: $HOME/Downloads/arma: install the library
+#$ cd $HOME/Downloads/arma
+#$ cmake .
+#$ make
+#$ sudo make install
+#$ # Compile and run the examples in this repository
+#$ # Assuming it is in: $HOME/angry-statistical-computing: install the library
+#$ cd $HOME/angry-statistical-computing
+#$ g++ main.cpp -o test -DARMA_DONT_USE_WRAPPER -lopenblas -llapack -std=c++11 -O2
+#$ ./test
+
+
+#| main.cpp | main C++ source file with all the examples |
+#| numDeriv.c | C library with functions to approximate gradient and hessian of a given multivariate function |
+#| zeroin.c | C routine for root finding of an univariate function |
+#| modified_optim.c | modified version of the C file with a method to minimize a given multivariate function |
