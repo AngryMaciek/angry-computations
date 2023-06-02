@@ -3,7 +3,7 @@
 # 4.06.2019
 
 suppressMessages(library(Rcpp)) # interface to cpp
-#suppressMessages(library(numDeriv)) # numeric hessian approximation
+suppressMessages(library(numDeriv)) # numeric hessian approximation
 set.seed(0) # random numbers' seed
 
 # add two numbers
