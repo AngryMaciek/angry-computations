@@ -1,0 +1,84 @@
+#
+# Makefile template for build and
+# installation of the C library.
+#
+# Maciej Bak
+# Swiss Institute of Bioinformatics
+# 11.09.2019
+#
+
+CC = gcc
+CFLAGS = -O2 -std=c99
+SRC = numDeriv.c
+HDR = $(SRC:.c=.h)
+OBJ = $(SRC:.c=.o)
+LIB = $(OBJ:.o=.a)
+
+.PHONY: all install clean uninstall
+
+# =========================================================
+# Build
+# =========================================================
+
+all: $(LIB)
+
+# Create an object file
+$(OBJ):
+	$(CC) $(CFLAGS) -c -o $@ $(SRC)
+
+# Create a static library file
+$(LIB): $(OBJ)
+	ar rcs $@ $<
+
+# =========================================================
+# Install
+# =========================================================
+
+install: {PREFIX}/lib/$(LIB) {PREFIX}/include/$(HDR)
+
+# Create top-level directory for the libraries
+{PREFIX}:
+	mkdir -p $@;
+
+# Create top-level directory for the static library files
+{PREFIX}/lib:
+	mkdir -p $@;
+
+# Create top-level directory for the headers
+{PREFIX}/include:
+	mkdir -p $@;
+
+# Copy the library file into the right directory
+{PREFIX}/lib/$(LIB): $(LIB) {PREFIX}/lib
+	cp $< $@
+
+# Copy the header file into the right directory
+{PREFIX}/include/$(HDR): $(HDR) {PREFIX}/include
+	cp $< $@
+
+# =========================================================
+# Clean
+# =========================================================
+
+# Remove the build files
+clean:
+	rm -f $(OBJ);
+	rm -f $(LIB);
+
+# =========================================================
+# Uninstall
+# =========================================================
+
+# Remove the top-level directories
+uninstall:
+	rm -f {PREFIX}/lib/$(LIB);
+	rm -f {PREFIX}/include/$(HDR);
+	if [ $$(ls -a1 {PREFIX}/lib | wc -l)==2 ]; then \
+		rm -rf {PREFIX}/lib; \
+	fi;
+	if [ $$(ls -a1 {PREFIX}/include | wc -l)==2 ]; then \
+		rm -rf {PREFIX}/include; \
+	fi;
+	if [ $$(ls -a1 {PREFIX} | wc -l)==2 ]; then \
+		rm -rf {PREFIX}; \
+	fi;
