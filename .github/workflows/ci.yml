@@ -104,7 +104,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install dependency R pkgs
-        run: R -e 'install.packages(c("Rcpp", "numDeriv"))'
+        run: sudo R -e 'install.packages(c("Rcpp", "numDeriv"))'
 
       - name: Execute R test script
         run: Rscript test.R
