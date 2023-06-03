@@ -3,7 +3,7 @@
 [![GitHub license](https://img.shields.io/github/license/AngryMaciek/efcomp)](https://github.com/AngryMaciek/efcomp/blob/master/LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8001609.svg)](https://doi.org/10.5281/zenodo.8001609)
 
-# Angry Computations 😡
+# _efcomp_
 
 The following repository contains various examples of how to carry out
 efficient calculations in _C++_ I have collected over my PhD time.
