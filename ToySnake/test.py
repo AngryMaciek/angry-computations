@@ -77,7 +77,7 @@ def main():
     X = np.random.rand(10, 5)
     print(X)
     print(type(X))
-    y = np.array([1, 2, 3, 4, 5])
+    y = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     print(y)
     print(type(y))
     coefficients, stds = functions.lm(X, y)
