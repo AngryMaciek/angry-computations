@@ -7,9 +7,9 @@
 #
 #   AUTHOR: Maciej_Bak
 #   AFFILIATION: Swiss_Institute_of_Bioinformatics
-#   CONTACT: very.angry.maciek@gmail.com
+#   CONTACT: wsciekly.maciek@gmail.com
 #   CREATED: 05-10-2020
-#   LICENSE: MIT
+#   LICENSE: GPL-3.0
 #
 ###############################################################################
 */
