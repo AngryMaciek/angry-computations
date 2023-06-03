@@ -135,6 +135,13 @@ jobs:
           wget https://sourceforge.net/projects/arma/files/armadillo-12.4.0.tar.xz
           tar -xf armadillo-12.4.0.tar.xz
 
+      - name: build & install Armadillo
+        run: |
+          cd armadillo-12.4.0
+          cmake .
+          make
+          sudo make install
+
       - name: Download CARMA
         run: |
           wget -O carma-v0.6.7.tar.gz https://github.com/RUrlus/carma/archive/refs/tags/v0.6.7.tar.gz
