@@ -1,14 +1,19 @@
 [![Open in GitHub Codespaces](https://badgen.net/badge/icon/Open%20in%20GitHub%20Codespaces?icon=github&label&color=black)](https://github.com/codespaces/new?hide_repo_select=true&ref=master&repo=648110302&skip_quickstart=true&machine=basicLinux32gb&geo=EuropeWest&devcontainer_path=.devcontainer%2Fdevcontainer.json)
-[![ci](https://github.com/AngryMaciek/angry-computations/workflows/ci/badge.svg?branch=master)](https://github.com/AngryMaciek/angry-computations/actions?query=workflow%3Aci)
-[![GitHub license](https://img.shields.io/github/license/AngryMaciek/angry-computations)](https://github.com/AngryMaciek/angry-computations/blob/master/LICENSE)
+[![ci](https://github.com/AngryMaciek/efcomp/workflows/ci/badge.svg?branch=master)](https://github.com/AngryMaciek/efcomp/actions?query=workflow%3Aci)
+[![GitHub license](https://img.shields.io/github/license/AngryMaciek/efcomp)](https://github.com/AngryMaciek/efcomp/blob/master/LICENSE)
 
 # Angry Computations 😡
 
-For specific instructions on how to execute test programs please see the [ci workflow file](https://github.com/AngryMaciek/angry-computations/blob/master/.github/workflows/ci.yml).
+The following repository contains various examples of how to carry out
+efficient calculations in _C++_ I have collected over my PhD time.
+General data processing may be executed in _Python_/_R_ whereas the core
+of the program may be exported into the optimised low-level language for fast operations.
+
+For specific instructions on how to execute test programs please see the [ci workflow file](https://github.com/AngryMaciek/efcomp/blob/master/.github/workflows/ci.yml).
 
 ### numDeriv.c
-This directory contains a reimplementation of the well-known [numDeriv package](https://cran.r-project.org/web/packages/numDeriv/index.html) (dedicated to scientific computing) from R into C static library that can be later included in C or C++ code. Although the implementation is based on numDeriv version: 2016.8-1.1 the functionality of this library is limited:  
-* Precise calculations are done using Richardson's extrapolation only. Parameters for Richardson's method are explicit arguments for the library functions but the accuracy of the approximations depends on the objective function and may vary for a given set of parameters values. It is strongly advised to always simulate a dataset, adjust the parameters and rebuild the library in order to minimize the error for every model being designed.  
+This directory contains a reimplementation of the well-known [numDeriv package](https://cran.r-project.org/web/packages/numDeriv/index.html) (dedicated to scientific computing) from R into C static library that can be later included in C or C++ code. Although the implementation is based on numDeriv version: 2016.8-1.1 there are a few key notes to keep in mind:
+* Precise calculations are done using Richardson's extrapolation; parameters for the method are explicit arguments for the library functions but the accuracy may depend on the objective function and can vary for a given set of parameters values.
 * Side derrivatives are not implemented.  
 * Objective functions can have a vector argument but scalar value is a requirement ($f:R^N -> R$).
 

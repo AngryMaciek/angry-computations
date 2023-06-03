@@ -10,7 +10,7 @@
 
     "privileged": true,
 
-    "updateContentCommand": "apt-get update && apt-get upgrade --yes && apt-get clean",
+    "updateContentCommand": "sudo apt-get update && apt-get upgrade --yes && apt-get clean",
 
     "customizations": {
         "codespaces": {
