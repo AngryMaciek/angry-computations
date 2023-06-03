@@ -37,7 +37,7 @@ Eigen::MatrixXd inverse(Eigen::MatrixXd m) {
 }
 
 // https://carma.readthedocs.io/en/latest/introduction.html#ols-example
-py::tuple lm(arma::mat& X, arma::colvec& y) {
+py::tuple lm(arma::mat& X, arma::mat& y) {
     // We borrow the data underlying the numpy arrays
     int n = X.n_rows, k = X.n_cols;
 
