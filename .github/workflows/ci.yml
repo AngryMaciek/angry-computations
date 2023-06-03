@@ -135,6 +135,7 @@ jobs:
           wget https://sourceforge.net/projects/arma/files/armadillo-12.4.0.tar.xz
           tar -xf armadillo-12.4.0.tar.xz
 
+      # following the official docs
       - name: build & install Armadillo
         run: |
           cd armadillo-12.4.0
@@ -147,6 +148,23 @@ jobs:
           wget -O carma-v0.6.7.tar.gz https://github.com/RUrlus/carma/archive/refs/tags/v0.6.7.tar.gz
           tar -xzf carma-v0.6.7.tar.gz
 
+      # following the official docs
+      # notes:
+        # cmake -DCARMA_INSTALL_LIB=ON ..:
+        # This command runs CMake to generate the build system files
+        # based on the CMakeLists.txt file located in the parent directory (..).
+        # The -DCARMA_INSTALL_LIB=ON option is used to enable the
+        # installation of the CARMA library.
+        # This means that after building the library, it will be installedin a location
+        # specified by the CMAKE_INSTALL_PREFIX variable or the default installation path.
+        #
+        # cmake --build . --config Release --target install:
+        # This command invokes the build system (e.g., Makefiles, Ninja) generated
+        # by CMake to build the CARMA library.
+        # It builds the library in the "Release" configuration (optimized) and
+        # specifically targets the "install" target.
+        # The "install" target is responsible for copying the built library and associated
+        # files to the installation location specified by CMAKE_INSTALL_PREFIX (or the default location).
       - name: build & install CARMA
         run: |
           cd carma-0.6.7
@@ -155,6 +173,23 @@ jobs:
           cmake -DCARMA_INSTALL_LIB=ON ..
           sudo cmake --build . --config Release --target install
 
+      # -I: specify header files directories
+      # -shared: resulting object will be a shared lib, required for Py extension module
+      # -std=c++14: ensure Cpp14 standard
+      # -fPIC: "Position Independent Code", required for shared lib
+      # `python3 -m pybind11 --includes`:
+        # This command is executed using backticks (``) to capture the output.
+        # It uses the Python interpreter (specifically Python 3) to invoke the
+        # pybind11 module and retrieve the necessary include flags.
+        # This ensures that the compilation includes the appropriate headers and flags for Pybind11.
+      # -o functions: shared lib file name
+      # `python3-config --extension-suffix`:
+        # This command is executed using backticks to capture the output.
+        # It uses the python3-config utility to retrieve the extension
+        # suffix for the current Python interpreter
+        #  This ensures that the resulting shared library has the appropriate
+        # file extension based on the platform and Python version.
+      # -larmadillo: tells the linker to link against the Armadillo library.
       - name: Compile the C++ code
         run: g++ -O2 -Wall -I/usr/include/eigen3/ -I/armadillo-12.4.0/include/ -I/usr/local/include/carma/ -I/home/runner/.local/lib/python3.10/site-packages/numpy/core/include -shared -std=c++14 -fPIC `python3 -m pybind11 --includes` test.cpp -o functions`python3-config --extension-suffix` -larmadillo
 
