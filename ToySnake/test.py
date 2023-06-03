@@ -42,9 +42,7 @@ def parse_arguments():
     )
     return parser
 
-
 ##############################################################################
-
 
 def main():
     """Main body of the script."""
@@ -67,7 +65,7 @@ def main():
     print(x2_array)
     print(type(x2_array))
 
-    # passing and returning numpy arrays:
+    # passing and returning numpy arrays through Eigen:
     A = np.random.rand(3, 3)
     print(A)
     print(type(A))
@@ -75,6 +73,18 @@ def main():
     print(Ainv)
     print(type(Ainv))
 
+    # passing and returning numpy arrays through CARMA:
+    X = np.random.rand(5, 5)
+    print(X)
+    print(type(X))
+    y = np.array([1, 2, 3, 4, 5])
+    print(y)
+    print(type(y))
+    coefficients, stds = functions.lm(A)
+    print(coefficients)
+    print(type(coefficients))
+    print(stds)
+    print(type(stds))
 
 ##############################################################################
 

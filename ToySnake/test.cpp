@@ -37,7 +37,7 @@ Eigen::MatrixXd inverse(Eigen::MatrixXd m) {
 }
 
 // https://carma.readthedocs.io/en/latest/introduction.html#ols-example
-py::tuple ols(arma::mat& X, arma::colvec& y) {
+py::tuple lm(arma::mat& X, arma::colvec& y) {
     // We borrow the data underlying the numpy arrays
     int n = X.n_rows, k = X.n_cols;
 
@@ -62,4 +62,5 @@ PYBIND11_MODULE(functions, m) {
     m.def("add2numbers", &add2numbers, py::arg("x"), py::arg("y"));
     m.def("square_a_number", py::vectorize(square_a_number));
     m.def("inverse", &inverse);
+    m.def("lm", &lm);
 }
