@@ -42,7 +42,7 @@ py::tuple lm(arma::mat& X, arma::colvec& y) {
     int n = X.n_rows, k = X.n_cols;
 
     arma::colvec coeffs = arma::solve(X, y);
-    arma::mat coeffmat = coeffs.reshape(coeffs.k, 1);
+    arma::mat coeffmat = coeffs.reshape(k, 1);
     arma::colvec resid = y - X * coeffs;
 
     double sig2 = arma::as_scalar(arma::trans(resid) * resid / (n-k));
