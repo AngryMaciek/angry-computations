@@ -52,7 +52,7 @@ py::tuple lm(arma::mat& X, arma::mat& y) {
     // return to python as a tuple containing two Numpy arrays.
     return py::make_tuple(
         carma::col_to_arr(coeffs),
-        carma::col_to_arr(std_errs)
+        carma::mat_to_arr(std_errs)
     );
 }
 // adapted from https://gallery.rcpp.org/articles/fast-linear-model-with-armadillo/
