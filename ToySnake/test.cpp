@@ -18,8 +18,8 @@
 #include <pybind11/numpy.h>
 #include <pybind11/eigen.h>
 #include <Eigen/LU>
+#include <carma>
 #include <armadillo>
-//#include <carma>
 namespace py = pybind11;
 
 double add2numbers(double i, double j) {
