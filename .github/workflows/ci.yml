@@ -131,7 +131,7 @@ jobs:
         run: sudo apt install libeigen3-dev
 
       - name: Compile the C++ code
-        run: c++ -O2 -Wall -I/usr/include/eigen3/ -shared -std=c++11 -fPIC `python3 -m pybind11 --includes` test.cpp -o functions`python3-config --extension-suffix`
+        run: c++ -O2 -Wall -I/usr/include/eigen3/ -shared -std=c++11 -fPIC `python3 -m pybind11 --includes` test.cpp -o functions `python3-config --extension-suffix`
 
       - name: Test Python script
         run: python test.py
