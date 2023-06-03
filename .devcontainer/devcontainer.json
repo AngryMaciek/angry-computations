@@ -1,0 +1,27 @@
+{
+
+    "name": "dev",
+
+    "hostRequirements": {
+        "cpus": 2,
+        "memory": "4gb",
+        "storage": "32gb"
+    },
+
+    "privileged": true,
+
+    "updateContentCommand": "apt-get update && apt-get upgrade --yes && apt-get clean",
+
+    "customizations": {
+        "codespaces": {
+            "openFiles": []
+        },
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "ms-vsliveshare.vsliveshare"
+            ]
+        }
+    }
+
+}

@@ -156,7 +156,14 @@ jobs:
           sudo cmake --build . --config Release --target install
 
       - name: Compile the C++ code
-        run: g++ -O2 -Wall -I/usr/include/eigen3/ -I/armadillo-12.4.0/include/ -I/usr/local/include/carma/ -I/home/runner/.local/lib/python3.10/site-packages/numpy/core/include -shared -std=c++14 -fPIC `python3 -m pybind11 --includes` test.cpp -o functions`python3-config --extension-suffix` -larmadillo
+        run: >
+          g++ -O2 -Wall 
+          -I/usr/include/eigen3/ 
+          -I/armadillo-12.4.0/include/ 
+          -I/usr/local/include/carma/ 
+          -I/home/runner/.local/lib/python3.10/site-packages/numpy/core/include 
+          -shared -std=c++14 -fPIC `python3 -m pybind11 --includes` 
+          test.cpp -o functions`python3-config --extension-suffix` -larmadillo
 
       - name: Test Python script
         run: python test.py
