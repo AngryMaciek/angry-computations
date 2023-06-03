@@ -42,6 +42,7 @@ py::tuple lm(arma::mat& X, arma::colvec& y) {
     int n = X.n_rows, k = X.n_cols;
 
     arma::colvec coeffs = arma::solve(X, y);
+    arma::mat coeffmat = coeffs.reshape(coeffs.k, 1);
     arma::colvec resid = y - X * coeffs;
 
     double sig2 = arma::as_scalar(arma::trans(resid) * resid / (n-k));
@@ -51,7 +52,7 @@ py::tuple lm(arma::mat& X, arma::colvec& y) {
     // We take ownership of the memory from the armadillo objects and
     // return to python as a tuple containing two Numpy arrays.
     return py::make_tuple(
-        carma::col_to_arr(coeffs), // use mat_to_arr() to return arma::mat
+        carma::mat_to_arr(coeffs),
         carma::col_to_arr(std_errs)
     );
 }
