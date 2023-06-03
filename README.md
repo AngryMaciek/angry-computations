@@ -7,7 +7,7 @@
 The following repository contains various examples of how to carry out
 efficient calculations in _C++_ I have collected over my PhD time.
 General data processing may be executed in _Python_/_R_ whereas the core
-of the program may be exported into the optimised low-level language.
+of the program may be exported into the optimised low-level language for fast operations.
 
 For specific instructions on how to execute test programs please see the [ci workflow file](https://github.com/AngryMaciek/efcomp/blob/master/.github/workflows/ci.yml).
 
