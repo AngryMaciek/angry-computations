@@ -37,6 +37,7 @@ Eigen::MatrixXd inverse(Eigen::MatrixXd m) {
 }
 
 // https://carma.readthedocs.io/en/latest/introduction.html#ols-example
+// adapted from https://gallery.rcpp.org/articles/fast-linear-model-with-armadillo/
 py::tuple lm(arma::mat& X, arma::colvec& y) {
     // We borrow the data underlying the numpy arrays
     int n = X.n_rows, k = X.n_cols;
@@ -46,8 +47,7 @@ py::tuple lm(arma::mat& X, arma::colvec& y) {
     arma::colvec resid = y - X * coeffs;
 
     double sig2 = arma::as_scalar(arma::trans(resid) * resid / (n-k));
-    //arma::colvec std_errs = arma::sqrt(sig2 * arma::diagvec( arma::inv(arma::trans(X)*X)) );
-    arma::colvec std_errs = sig2 * arma::diagvec(arma::inv(arma::trans(X)*X));
+    arma::colvec std_errs = arma::sqrt(sig2 * arma::diagvec( arma::inv(arma::trans(X)*X)) );
 
     // We take ownership of the memory from the armadillo objects and
     // return to python as a tuple containing two Numpy arrays.
@@ -56,7 +56,6 @@ py::tuple lm(arma::mat& X, arma::colvec& y) {
         carma::col_to_arr(std_errs)
     );
 }
-// adapted from https://gallery.rcpp.org/articles/fast-linear-model-with-armadillo/
 
 // binding C++ code to Python
 PYBIND11_MODULE(functions, m) {
