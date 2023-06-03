@@ -113,4 +113,42 @@ jobs:
         run: Rscript RcppArmadillo.R
       - name: Execute RcppEigen test script
         run: Rscript RcppEigen.R
+
+  ToySnake:
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: ./ToySnake
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Install dependency Python pkgs
+        run: pip install numpy pybind11
+
+
 ...
+
+
+#  channels:
+#    - bioconda
+#    - conda-forge
+#
+#  dependencies:
+#    - black=19.10b0
+#    - eigen=3.3.7
+#    - flake8=3.8.3
+#    - numpy=1.19.0
+#    - pybind11=2.5.0
+#    - python=3.7.4
+#
+#
+#      - name: Compile the C++ code [ubuntu]
+#        shell: bash -l {0}
+#        if: matrix.os == 'ubuntu-20.04'
+#        run: c++ -O3 -Wall -I/usr/share/miniconda/envs/pybind11-test-env/include/eigen3/ -shared -std=c++11 -fPIC `python3 -m pybind11 --includes` functions.cpp -o functions`python3-config --extension-suffix`
+#
+#      - name: Test seed=1
+#        shell: bash -l {0}
+#        run: python test.py --seed 1
