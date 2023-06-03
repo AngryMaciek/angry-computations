@@ -1,10 +1,10 @@
 [![Open in GitHub Codespaces](https://badgen.net/badge/icon/Open%20in%20GitHub%20Codespaces?icon=github&label&color=black)](https://github.com/codespaces/new?hide_repo_select=true&ref=master&repo=648110302&skip_quickstart=true&machine=basicLinux32gb&geo=EuropeWest&devcontainer_path=.devcontainer%2Fdevcontainer.json)
-[![ci](https://github.com/AngryMaciek/angry-computations/workflows/ci/badge.svg?branch=master)](https://github.com/AngryMaciek/angry-computations/actions?query=workflow%3Aci)
-[![GitHub license](https://img.shields.io/github/license/AngryMaciek/angry-computations)](https://github.com/AngryMaciek/angry-computations/blob/master/LICENSE)
+[![ci](https://github.com/AngryMaciek/efcomp/workflows/ci/badge.svg?branch=master)](https://github.com/AngryMaciek/efcomp/actions?query=workflow%3Aci)
+[![GitHub license](https://img.shields.io/github/license/AngryMaciek/efcomp)](https://github.com/AngryMaciek/efcomp/blob/master/LICENSE)
 
 # Angry Computations 😡
 
-For specific instructions on how to execute test programs please see the [ci workflow file](https://github.com/AngryMaciek/angry-computations/blob/master/.github/workflows/ci.yml).
+For specific instructions on how to execute test programs please see the [ci workflow file](https://github.com/AngryMaciek/efcomp/blob/master/.github/workflows/ci.yml).
 
 ### numDeriv.c
 This directory contains a reimplementation of the well-known [numDeriv package](https://cran.r-project.org/web/packages/numDeriv/index.html) (dedicated to scientific computing) from R into C static library that can be later included in C or C++ code. Although the implementation is based on numDeriv version: 2016.8-1.1 the functionality of this library is limited:  
