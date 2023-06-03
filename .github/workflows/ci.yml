@@ -146,11 +146,10 @@ jobs:
         run: |
           wget -O carma-v0.6.7.tar.gz https://github.com/RUrlus/carma/archive/refs/tags/v0.6.7.tar.gz
           tar -xzf carma-v0.6.7.tar.gz
-          ls
 
       - name: build & install CARMA
         run: |
-          cd carma-v0.6.7
+          cd carma-0.6.7
           mkdir build
           cd build
           cmake -DCARMA_INSTALL_LIB=ON ..
