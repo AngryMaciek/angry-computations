@@ -74,7 +74,7 @@ def main():
     print(type(Ainv))
 
     # passing and returning numpy arrays through CARMA:
-    X = np.random.rand(5, 5)
+    X = np.random.rand(10, 5)
     print(X)
     print(type(X))
     y = np.array([1, 2, 3, 4, 5])
