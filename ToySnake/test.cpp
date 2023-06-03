@@ -45,7 +45,8 @@ py::tuple lm(arma::mat& X, arma::colvec& y) {
     arma::colvec resid = y - X * coeffs;
 
     double sig2 = arma::as_scalar(arma::trans(resid) * resid / (n-k));
-    arma::colvec std_errs = arma::sqrt(sig2 * arma::diagvec( arma::inv(arma::trans(X)*X)) );
+    //arma::colvec std_errs = arma::sqrt(sig2 * arma::diagvec( arma::inv(arma::trans(X)*X)) );
+    arma::colvec std_errs = arma::inv(arma::trans(X)*X);
 
     // We take ownership of the memory from the armadillo objects and
     // return to python as a tuple containing two Numpy arrays.
