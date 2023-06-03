@@ -10,8 +10,6 @@
 
     "privileged": true,
 
-    "updateContentCommand": "sudo apt-get update && apt-get upgrade --yes && apt-get clean",
-
     "customizations": {
         "codespaces": {
             "openFiles": []
