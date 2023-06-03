@@ -80,7 +80,7 @@ def main():
     y = np.array([1, 2, 3, 4, 5])
     print(y)
     print(type(y))
-    coefficients, stds = functions.lm(A)
+    coefficients, stds = functions.lm(X, y)
     print(coefficients)
     print(type(coefficients))
     print(stds)
