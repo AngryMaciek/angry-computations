@@ -1,4 +1,5 @@
 [![ci](https://github.com/AngryMaciek/angry-computations/workflows/ci/badge.svg?branch=master)](https://github.com/AngryMaciek/angry-computations/actions?query=workflow%3Aci)
+[![GitHub license](https://img.shields.io/github/license/AngryMaciek/angry-computations)](https://github.com/AngryMaciek/angry-computations/blob/master/LICENSE)
 
 # Angry Computations 😡
 
