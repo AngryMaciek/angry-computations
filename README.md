@@ -18,3 +18,6 @@ Toy exampes of how to use C++ [Armadillo](http://arma.sourceforge.net/) library 
 
 ### ToyRcpp
 This is a very small directory that presents the libraries needed for efficient statistical computing in [R interfacing to C++](http://adv-r.had.co.nz/Rcpp.html). Functions presented are useful to build statistical models based on likelihood and optimize their parameters. These techniques should be enough to implement complex Bayesian models, fit the parameters efficiently and optimize the runtime on big datasets. Functions' logic and sygnatures are described within the source code. Additionally, examples for [RcppArmadillo](https://github.com/RcppCore/RcppArmadillo) and [RcppEigen](https://github.com/RcppCore/RcppEigen) are provided.
+
+### ToySnake
+Similarily as above, this directory contains toy examples of how to utilize [pybind11](https://pybind11.readthedocs.io/en/stable) and [CARMA](https://github.com/RUrlus/carma) to interface between Python/NumPy and C++ with Eigen and Armadillo libraries for efficient computing.
