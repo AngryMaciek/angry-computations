@@ -154,6 +154,7 @@ jobs:
           cd build
           cmake -DCARMA_INSTALL_LIB=ON ..
           sudo cmake --build . --config Release --target install
+          pwd
 
       - name: Compile the C++ code
         run: >
