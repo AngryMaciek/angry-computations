@@ -50,8 +50,10 @@ RUN \
   && rm -rf carma-v0.6.7.tar.gz
 
 ##### PYTHON PACKAGES #####
-RUN pip install numpy pybind11 jupyterlab bash_kernel \
-  && python -m bash_kernel.install
+RUN pip install numpy pybind11 jupyterlab bash_kernel python-language-server \
+  && python -m bash_kernel.install \
+  && jupyter lab --generate-config \
+  && sed -i '$ a\c.ServerApp.allow_origin = "*"\nc.ServerApp.websocket_origin = "*"' /root/.jupyter/jupyter_lab_config.py
 
 ##### R PACKAGES #####
 RUN R -e 'install.packages(c("Rcpp", "numDeriv", "RcppArmadillo", "RcppEigen"))'
