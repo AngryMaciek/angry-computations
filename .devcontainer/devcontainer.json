@@ -2,6 +2,8 @@
 
     "name": "dev",
 
+    "dockerFile": "Dockerfile",
+
     "hostRequirements": {
         "cpus": 2,
         "memory": "4gb",
