@@ -154,7 +154,6 @@ jobs:
           cd build
           cmake -DCARMA_INSTALL_LIB=ON ..
           sudo cmake --build . --config Release --target install
-          ls /home/runner/work/efcomp/efcomp/ToySnake/armadillo-12.4.0/include/ 
 
       - name: Compile the C++ code
         run: >
@@ -164,7 +163,7 @@ jobs:
           -I/usr/local/include/carma/ 
           -I/home/runner/.local/lib/python3.10/site-packages/numpy/core/include 
           -shared -std=c++14 -fPIC `python3 -m pybind11 --includes` 
-          test.cpp -o functions`python3-config --extension-suffix` -larmadillo
+          test.cpp -o functions`python3-config --extension-suffix` -llapack
 
       - name: Test Python script
         run: python test.py
