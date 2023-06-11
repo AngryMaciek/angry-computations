@@ -3,12 +3,12 @@
 [![GitHub license](https://img.shields.io/github/license/AngryMaciek/efcomp)](https://github.com/AngryMaciek/efcomp/blob/master/LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8001609.svg)](https://doi.org/10.5281/zenodo.8001609)
 
-contributing shield
-
 ## Advanced methods of efficient scientific computing in Python/R/C++
-
+*Maciek Bak*
 
 ### Scope & target audience
+
+general info
 
 Participants of the course should be well-prepared with:
 
@@ -32,5 +32,7 @@ setting up necessary dependencies.
 4. D
 5. E
 6. F
+
+(how-to go through it, structure description)
 
 ### Contributing
