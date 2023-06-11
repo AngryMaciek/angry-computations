@@ -2,169 +2,24 @@
 #
 #   AUTHOR: Maciej_Bak
 #   CONTACT: wsciekly.maciek@gmail.com
-#   CREATED: 29-05-2023
-#   LICENSE: Apache_2.0
+#   CREATED: 23-05-2023
+#   LICENSE: GPLv3.0
 #
 ###############################################################################
 ---
-name: ci
+name: CI
 
 on: push
 
 jobs:
 
-  numDerivc:
+  session_0:
     runs-on: ubuntu-22.04
     defaults:
       run:
-        working-directory: ./numDeriv.c
+        working-directory: ./session/0_SystemSetup
     steps:
 
       - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      # generate a full Makefile.
-      # By default the library will be installed under `~/lib`
-      # (compiled file under `~/lib/lib`, header file under `~/lib/include`).
-      # The prefix path might be adjusted in the configure file if needed.
-      - name: configure (make)
-        run: ./configure
-
-      # build a static library
-      - name: build (make)
-        run: make
-
-      # copy the static library to the lib directory
-      - name: install (make)
-        run: make install
-
-      # remove build files from the working directory
-      - name: clean (make)
-        run: make clean
-
-      # provide information to the linker: full path to the static library.
-      # As the library requires math.h it is necessary to provide `-lm` to the linker.
-      # Also, the library is written in C99 standard.
-      - name: compile tests
-        run: gcc test.c -I ~/lib/include/ ~/lib/lib/numDeriv.a -o numDeriv -std=c99 -lm
-
-      # Results have been compared to exact solutions and approximations calculated in R.
-      # (expected values are commented in the source code)
-      - name: execute tests
-        run: ./numDeriv
-
-      # remove installed files
-      - name: uninstall (make)
-        run: make uninstall
-
-  AngryStatisticalComputing:
-    runs-on: ubuntu-22.04
-    defaults:
-      run:
-        working-directory: ./angry-statistical-computing
-    steps:
-
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      # Armadillo requires BLAS and LAPACK for marix operations
-      # cmake is required to build Armadillo
-      - name: Install BLAS & LAPACK & cmake
-        run: sudo apt install cmake libopenblas-dev liblapack-dev
-
-      - name: Download Armadillo
-        run: |
-          wget https://sourceforge.net/projects/arma/files/armadillo-12.4.0.tar.xz
-          tar -xf armadillo-12.4.0.tar.xz
-
-      - name: build & install Armadillo
-        run: |
-          cd armadillo-12.4.0
-          cmake .
-          make
-          sudo make install
-
-      # compile C++ tests
-      # (all descriptions inside the source code)
-      - name: Compile examples
-        run: g++ main.cpp -o asc -DARMA_DONT_USE_WRAPPER -lopenblas -llapack -std=c++11 -O2
-
-      - name: Execute test program
-        run: ./asc
-
-  ToyRcpp:
-    runs-on: ubuntu-22.04
-    defaults:
-      run:
-        working-directory: ./ToyRcpp
-    steps:
-
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Install dependency R pkgs
-        run: sudo R -e 'install.packages(c("Rcpp", "numDeriv", "RcppArmadillo", "RcppEigen"))'
-
-      # .r: R script with example calls of C++ functions
-      # .cpp: C++ functions with optimisation-related algorithms & algebra methods
-      - name: Execute Rcpp test script
-        run: Rscript Rcpp.R
-      - name: Execute RcppArmadillo test script
-        run: Rscript RcppArmadillo.R
-      - name: Execute RcppEigen test script
-        run: Rscript RcppEigen.R
-
-  ToySnake:
-    runs-on: ubuntu-22.04
-    defaults:
-      run:
-        working-directory: ./ToySnake
-    steps:
-
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Install dependency Python pkgs
-        run: pip install numpy pybind11
-
-      - name: Install Eigen
-        run: sudo apt install libeigen3-dev
-
-      - name: Download Armadillo
-        run: |
-          wget https://sourceforge.net/projects/arma/files/armadillo-12.4.0.tar.xz
-          tar -xf armadillo-12.4.0.tar.xz
-
-      - name: build & install Armadillo
-        run: |
-          cd armadillo-12.4.0
-          cmake .
-          make
-          sudo make install
-
-      - name: Download CARMA
-        run: |
-          wget -O carma-v0.6.7.tar.gz https://github.com/RUrlus/carma/archive/refs/tags/v0.6.7.tar.gz
-          tar -xzf carma-v0.6.7.tar.gz
-
-      - name: build & install CARMA
-        run: |
-          cd carma-0.6.7
-          mkdir build
-          cd build
-          cmake -DCARMA_INSTALL_LIB=ON ..
-          sudo cmake --build . --config Release --target install
-
-      - name: Compile the C++ code
-        run: >
-          g++ -O2 -Wall 
-          -I/usr/include/eigen3/ 
-          -I/home/runner/work/efcomp/efcomp/ToySnake/armadillo-12.4.0/include/ 
-          -I/usr/local/include/carma/ 
-          -I/home/runner/.local/lib/python3.10/site-packages/numpy/core/include 
-          -shared -std=c++14 -fPIC `python3 -m pybind11 --includes` 
-          test.cpp -o functions`python3-config --extension-suffix` -llapack
-
-      - name: Test Python script
-        run: python test.py
+        uses: actions/checkout@v3
 ...
