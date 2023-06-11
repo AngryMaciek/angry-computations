@@ -3,4 +3,4 @@
 [![GitHub license](https://img.shields.io/github/license/AngryMaciek/efcomp)](https://github.com/AngryMaciek/efcomp/blob/master/LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8001609.svg)](https://doi.org/10.5281/zenodo.8001609)
 
-# Advanced methods of efficient scientific computing in Python/R/C++
+## Advanced methods of efficient scientific computing in Python/R/C++
