@@ -3,4 +3,32 @@
 [![GitHub license](https://img.shields.io/github/license/AngryMaciek/efcomp)](https://github.com/AngryMaciek/efcomp/blob/master/LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8001609.svg)](https://doi.org/10.5281/zenodo.8001609)
 
+contributing shield
+
 ## Advanced methods of efficient scientific computing in Python/R/C++
+
+
+### Scope & target audience
+
+* experience with a text shell environment
+* very good understanding of C and C++
+* basic programming skills in Python and R
+* background in linear algebra, real analysis, statistics and machine learning
+
+In addition to the aforementioned material any prior experience in
+computational research will be highly beneficial for the participants.
+
+For the reasons above the following course **is not** suitable for beginners.  
+
+### Structure
+
+The course is divided into 5 sessions with session zero dedicated to
+setting up necessary dependencies.
+1. A
+2. B
+3. C
+4. D
+5. E
+6. F
+
+### Contributing
