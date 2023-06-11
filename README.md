@@ -4,7 +4,6 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8001609.svg)](https://doi.org/10.5281/zenodo.8001609)
 
 ## Advanced methods of efficient scientific computing in Python/R/C++
-*Maciek Bak*
 
 ### Scope & target audience
 
@@ -36,3 +35,10 @@ setting up necessary dependencies.
 (how-to go through it, structure description)
 
 ### Contributing
+
+All contrubitions are very much welcome in the forms of
+GitHub Issues and Pull Requests 😊  
+Working on your first Pull Request? You can learn how from this free series:  
+[How to Contribute to an Open Source Project on GitHub](https://kcd.im/pull-request)
+
+*© 2023 Maciek Bak*
