@@ -10,13 +10,15 @@ contributing shield
 
 ### Scope & target audience
 
+Participants of the course should be well-prepared with:
+
 * experience with a text shell environment
 * very good understanding of C and C++
 * basic programming skills in Python and R
 * background in linear algebra, real analysis, statistics and machine learning
 
-In addition to the aforementioned material any prior experience in
-computational research will be highly beneficial for the participants.
+In addition to the aforementioned material prior experience in
+computational research will be highly beneficial.
 
 For the reasons above the following course **is not** suitable for beginners.  
 
