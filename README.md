@@ -7,8 +7,8 @@
 
 The following software repository presents a specialised,
 postgraduate-level monographic course dedicated to efficient scientific computing.
-Its main focus are the interfacing mechanisms between labgauges widely used and popular
-amongst data scientists: Python and R to a low-level but much faster C++.
+Its main focus are the interfacing mechanisms between langauges widely used and popular
+amongst data scientists: _Python_ and _R_ to a low-level but much faster _C++_.
 
 ### Scope & target audience
 
@@ -24,7 +24,7 @@ Participants of the course should be well-prepared with:
 In addition to the aforementioned material prior experience in
 computational research will be highly beneficial.
 
-For the reasons above the following course **is not** suitable for beginners.  
+For the reasons above the following course **is not** suitable for junior developers.  
 
 ### Structure
 
