@@ -5,10 +5,10 @@ FROM ubuntu:22.04
 LABEL base.image="ubuntu:22.04"
 LABEL version="1.0.0"
 LABEL software="efcomp"
-LABEL software.description="Efficient computing in Python/R/C++"
+LABEL software.description="Efficient scientific computing in Python/R/C++"
 LABEL software.website="https://github.com/AngryMaciek/efcomp"
 LABEL software.license="GPL-3.0"
-LABEL software.tags="C++, scientific-computing"
+LABEL software.tags="C++, Python, R, scientific-computing"
 LABEL maintainer="Maciek Bak"
 LABEL maintainer.email="wsciekly.maciek@gmail.com"
 
