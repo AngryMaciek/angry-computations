@@ -5,7 +5,7 @@
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8001609.svg)](https://doi.org/10.5281/zenodo.8001609)
 
-## Advanced methods of efficient scientific computing in Python/R/C++
+## Advanced methods for efficient scientific computing in Python/R/C++
 
 The following software repository presents a specialised,
 postgraduate-level monographic course dedicated to efficient scientific computing.
