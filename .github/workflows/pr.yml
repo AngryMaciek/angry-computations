@@ -1,0 +1,44 @@
+###############################################################################
+#
+#   AUTHOR: Maciej_Bak
+#   CONTACT: wsciekly.maciek@gmail.com
+#   CREATED: 04-08-2023
+#   LICENSE: GPLv3.0
+#
+###############################################################################
+---
+name: PR
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+jobs:
+
+  conventional-title:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: morrisoncole/pr-lint-action@v1.7.0
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          title-regex: "^(feat|fix|docs|style|refactor|perf|test|build|ci|chore): .{1,}"
+          on-failed-regex-fail-action: true
+          on-failed-regex-create-review: true
+          on-failed-regex-request-changes: true
+          on-failed-regex-comment:
+            "Please stick to Conventional Commits syntax for PR titles ;)"
+          on-succeeded-regex-dismiss-review-comment:
+            "Thank you <3"
+
+  assignee-reviewer:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: kentaro-m/auto-assign-action@v1.2.5
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+
+...
