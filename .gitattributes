@@ -21,3 +21,8 @@ Makefile                               text eol=lf
 # binary is a built-in macro attribute == -diff -merge -text
 *.ipynb                                binary
 *.html                                 binary
+
+# linguist settings:
+#
+# all rendered notebooks
+.html                                  -linguist-detectable
