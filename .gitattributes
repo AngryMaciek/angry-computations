@@ -1,0 +1,23 @@
+# Normalise line endings automatically for files detected as text by default.
+# That is: let the git installation on a user's machine decide
+# which line ending to use when a repository is checked out.
+# Subsequent lines may override this setting.
+*                                      text=auto
+
+# recognise file syntax during diff
+*.md                                   text diff=markdown
+*.sh                                   text diff=bash
+*.py                                   text diff=python
+*.r                                    text diff=r
+*.c                                    text diff=c
+*.cpp                                  text diff=cpp
+
+# force bash scripts & Makefile to always use LF
+*.sh                                   text eol=lf
+Makefile                               text eol=lf
+
+# mark binary files explicitly
+# (Git does not try to merge these files)
+# binary is a built-in macro attribute == -diff -merge -text
+*.ipynb                                binary
+*.html                                 binary
