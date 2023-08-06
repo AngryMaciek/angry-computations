@@ -18,13 +18,29 @@ jobs:
 
     steps:
 
-      - name: Install make
-        run: sudo apt-get install make
-
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Setup Miniconda & Environment
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          python-version: "3.10"
+          auto-update-conda: true
+          miniforge-variant: Mambaforge
+          channels: conda-forge,defaults
+          channel-priority: true
+          activate-environment: efcomp-dev
+          environment-file: environment.yml
+          auto-activate-base: false
+
+      - name: Conda Info
+        shell: bash -l {0}
+        run: |
+          conda info -a
+          conda list
+
       - name: Exec make
+        shell: bash -l {0}
         run: make s0
 
   s1:
@@ -32,13 +48,29 @@ jobs:
 
     steps:
 
-      - name: Install make
-        run: sudo apt-get install make
-
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Setup Miniconda & Environment
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          python-version: "3.10"
+          auto-update-conda: true
+          miniforge-variant: Mambaforge
+          channels: conda-forge,defaults
+          channel-priority: true
+          activate-environment: efcomp-dev
+          environment-file: environment.yml
+          auto-activate-base: false
+
+      - name: Conda Info
+        shell: bash -l {0}
+        run: |
+          conda info -a
+          conda list
+
       - name: Exec make
+        shell: bash -l {0}
         run: make s1
 
   s2:
@@ -46,13 +78,29 @@ jobs:
 
     steps:
 
-      - name: Install make
-        run: sudo apt-get install make
-
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Setup Miniconda & Environment
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          python-version: "3.10"
+          auto-update-conda: true
+          miniforge-variant: Mambaforge
+          channels: conda-forge,defaults
+          channel-priority: true
+          activate-environment: efcomp-dev
+          environment-file: environment.yml
+          auto-activate-base: false
+
+      - name: Conda Info
+        shell: bash -l {0}
+        run: |
+          conda info -a
+          conda list
+
       - name: Exec make
+        shell: bash -l {0}
         run: make s2
 
   s3:
@@ -60,13 +108,29 @@ jobs:
 
     steps:
 
-      - name: Install make
-        run: sudo apt-get install make
-
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Setup Miniconda & Environment
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          python-version: "3.10"
+          auto-update-conda: true
+          miniforge-variant: Mambaforge
+          channels: conda-forge,defaults
+          channel-priority: true
+          activate-environment: efcomp-dev
+          environment-file: environment.yml
+          auto-activate-base: false
+
+      - name: Conda Info
+        shell: bash -l {0}
+        run: |
+          conda info -a
+          conda list
+
       - name: Exec make
+        shell: bash -l {0}
         run: make s3
 
   s4:
@@ -74,13 +138,29 @@ jobs:
 
     steps:
 
-      - name: Install make
-        run: sudo apt-get install make
-
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Setup Miniconda & Environment
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          python-version: "3.10"
+          auto-update-conda: true
+          miniforge-variant: Mambaforge
+          channels: conda-forge,defaults
+          channel-priority: true
+          activate-environment: efcomp-dev
+          environment-file: environment.yml
+          auto-activate-base: false
+
+      - name: Conda Info
+        shell: bash -l {0}
+        run: |
+          conda info -a
+          conda list
+
       - name: Exec make
+        shell: bash -l {0}
         run: make s4
 
   s5:
@@ -88,13 +168,29 @@ jobs:
 
     steps:
 
-      - name: Install make
-        run: sudo apt-get install make
-
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Setup Miniconda & Environment
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          python-version: "3.10"
+          auto-update-conda: true
+          miniforge-variant: Mambaforge
+          channels: conda-forge,defaults
+          channel-priority: true
+          activate-environment: efcomp-dev
+          environment-file: environment.yml
+          auto-activate-base: false
+
+      - name: Conda Info
+        shell: bash -l {0}
+        run: |
+          conda info -a
+          conda list
+
       - name: Exec make
+        shell: bash -l {0}
         run: make s5
 
   docker:
