@@ -15,13 +15,87 @@ jobs:
 
   s0:
     runs-on: ubuntu-22.04
-    defaults:
-      run:
-        working-directory: ./session/0_SystemSetup
+
     steps:
+
+      - name: Install make
+        run: sudo apt-get install make
 
       - name: Checkout Repository
         uses: actions/checkout@v3
+
+      - name: Exec make
+        run: make s0
+
+  s1:
+    runs-on: ubuntu-22.04
+
+    steps:
+
+      - name: Install make
+        run: sudo apt-get install make
+
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Exec make
+        run: make s1
+
+  s2:
+    runs-on: ubuntu-22.04
+
+    steps:
+
+      - name: Install make
+        run: sudo apt-get install make
+
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Exec make
+        run: make s2
+
+  s3:
+    runs-on: ubuntu-22.04
+
+    steps:
+
+      - name: Install make
+        run: sudo apt-get install make
+
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Exec make
+        run: make s3
+
+  s4:
+    runs-on: ubuntu-22.04
+
+    steps:
+
+      - name: Install make
+        run: sudo apt-get install make
+
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Exec make
+        run: make s4
+
+  s5:
+    runs-on: ubuntu-22.04
+
+    steps:
+
+      - name: Install make
+        run: sudo apt-get install make
+
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Exec make
+        run: make s5
 
   docker:
     runs-on: ubuntu-22.04
