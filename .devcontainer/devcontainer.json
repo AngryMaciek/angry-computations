@@ -12,23 +12,6 @@
 
     "privileged": true,
 
-    "forwardPorts": [8000, 9000],
-
-    "portsAttributes": {
-        "8000": {
-            "label": "HTTP",
-            "protocol": "http",
-            "onAutoForward": "notify",
-            "elevateIfNeeded": true
-        },
-        "9000": {
-            "label": "HTTPS",
-            "protocol": "https",
-            "onAutoForward": "notify",
-            "elevateIfNeeded": true
-        }
-    },
-
     "customizations": {
         "codespaces": {
             "openFiles": []
