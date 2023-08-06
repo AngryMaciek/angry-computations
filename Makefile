@@ -55,7 +55,7 @@ container:
 	@if [ $$((docker images | grep efcomp) &> /dev/null; echo $$?) -eq 0 ] \
 	; then\
 		docker rm efcomp &> /dev/null;\
-		docker run --name efcomp -e HOSTUID=`id -u $$USER` -p 8888:8888 -it -v $$PWD:/efcomp efcomp:latest;\
+		docker run --name efcomp -it efcomp:latest;\
 	else \
 		echo "Docker deamon isn't running OR efcomp image isn't available OR the current user requires higher privileges.";\
 	fi
