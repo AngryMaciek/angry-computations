@@ -13,7 +13,7 @@ on: push
 
 jobs:
 
-  session_0:
+  s0:
     runs-on: ubuntu-22.04
     defaults:
       run:
@@ -22,4 +22,29 @@ jobs:
 
       - name: Checkout Repository
         uses: actions/checkout@v3
+
+  docker:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+
+      - name: Build Docker image
+        run: docker build -t efcomp:latest -f Dockerfile .
+
+      # non-interactive shell needs to initialise & activate conda in a different way than -it
+      #
+      # Dockerception is not advised (running Docker in a Docker, dind)
+      # https://stackoverflow.com/a/33003273/2340598
+      #
+      # ~AngryMaciek
+      #- name: make help
+      #  run: |
+      #    docker run --name efcomp -v /home/runner/work/efcomp/efcomp:/efcomp efcomp /bin/bash -c "source /mambaforge/etc/profile.d/conda.sh && conda activate efcomp-dev && make"
+      #    docker rm efcomp
+      #
+      # Dockerception is not advised (running Docker in a Docker, dind)
+      # https://stackoverflow.com/a/33003273/2340598
+
 ...
