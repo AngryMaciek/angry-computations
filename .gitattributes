@@ -25,4 +25,4 @@ Makefile                               text eol=lf
 # linguist settings:
 #
 # all rendered notebooks
-.html                                  -linguist-detectable
+*.html                                 -linguist-detectable

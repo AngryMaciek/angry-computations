@@ -18,7 +18,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 ##### SYSTEM PACKAGES #####
 RUN apt update \
-  && apt install -y make cmake wget r-base python3-pip \
+  && apt install -y make cmake wget g++ r-base python3-pip \
   && update-alternatives --install /usr/bin/python python /usr/bin/python3 1 \
   && apt autoremove -y \
   && apt clean -y \
