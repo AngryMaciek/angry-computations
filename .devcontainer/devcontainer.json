@@ -12,7 +12,7 @@
 
     "privileged": true,
 
-    "workspaceFolder": "/root/sessions"
+    "workspaceFolder": "/root/sessions",
 
     "customizations": {
         "codespaces": {
