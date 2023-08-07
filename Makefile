@@ -2,7 +2,7 @@
 #
 #   Development commands for the project
 #
-#   AUTHOR: Maciej_Bak
+#   AUTHOR: Maciek_Bak
 #   CONTACT: wsciekly.maciek@gmail.com
 #   CREATED: 04-08-2023
 #
