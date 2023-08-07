@@ -30,8 +30,7 @@ For the reasons above the following course **is not** suitable for junior develo
 
 ### Structure 🏗️
 
-The course is divided into 5 sessions with session zero dedicated to
-setting up necessary dependencies.
+The course is divided into 5 sessions with [session zero](sessions/0_SystemSetup/notebook.ipynb) dedicated to setting up necessary dependencies.
 1. A
 2. B
 3. C

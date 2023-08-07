@@ -7457,31 +7457,60 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a6796653-17c5-43bf-8bc6-6676e2d5c0e1">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2aa784c9-7873-425e-9771-d32bf57a52e3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span>
-</pre></div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>This course is designed such that during each of the sessions participants should read the materials presented in a notebook (like this exact one) and simultaneously, whenever prompted, execute provided scripts in a UNIX shell. I use Jupyter technology here for pure documentation, these notebooks are not intented to be interactive nor executable. For their Markdown support and syntax highlighting these documents are a very convenient solution to prepare a code-based tutorial. In a few places I might present an executed bash command (through a bash kernel for Jupyter) but users should always follow instructions in a separate command line.</p>
+<p>Thus, an internet browser is essential to follow the course materials, two options are available:</p>
+<ul>
+<li><code>[local]</code> clone the git repository and open rendered notebooks in HTML format in your browser</li>
+<li><code>[remote]</code> do not clone the repository, navigate through the GitHub and browse notebooks in JSON format (ipynb extension)</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=bf6798ad-ff94-40c0-818b-f78d6c490c29">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bf7b957e-0051-4d4c-ba1f-e6f79c254fc1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span>
-</pre></div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>We will assume that users work on a Linux system, specifically the popular Ubuntu distribution.<br/>
+Please make sure you have the following software installed and available:</p>
+<ul>
+<li><em>make</em></li>
+<li><em>cmake</em></li>
+<li><em>wget</em></li>
+<li><em>g++</em></li>
+<li><em>r-base</em></li>
+<li><em>python3 + pip</em></li>
+</ul>
+<p>In case any of those is missing in your system you may easily install them with the <code>apt</code> package manager:</p>
+<pre><code>apt install -y make cmake wget g++ r-base python3-pip
+</code></pre>
 </div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f130757c-d1ff-4503-b762-d978ead579ab">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Please test these tools with the following commands:</p>
+<pre><code>make --version
+cmake --version
+wget --version
+g++ --version
+R --version
+python3 --version
+</code></pre>
 </div>
 </div>
 </div>
@@ -7493,6 +7522,80 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Docker-container">Docker container<a class="anchor-link" href="#Docker-container">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=797ef642-ed3a-4473-8f10-80126cbd0901">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>For users who do not operate on Ubuntu machines we have prepared a dedicated Docker image with all the prerequisites already in place.<br/>
+Those who already set up their system as in the previous description may skip this section.</p>
+<p>Docker Engine itself becomes the one and only dependency.<br/>
+Please go through the <a href="https://docs.docker.com/engine/install/">official Docker documentation</a> for instructions on how to set it up on your operating system.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=45841051-90b9-418f-9b45-ccf2c570de40">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>In order to pull the image prepared for this course one should execute:</p>
+<pre><code>docker pull angrymaciek/efcomp:latest
+</code></pre>
+<p>That command needs to be executed only once.<br/>
+Having the image available locally we may now build Docker containers based on it.</p>
+<p>Start the container with:</p>
+<pre><code>docker run --name efcomp -it efcomp:latest
+</code></pre>
+<p>Please note that the container environment is temporary; after exiting it one should delete the old container before starting a new one:</p>
+<pre><code>docker rm efcomp
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=977e1e44-3f7a-4071-8091-4dc520e1641d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Docker-image-design">Docker image design<a class="anchor-link" href="#Docker-image-design">¶</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=471436c1-a3e5-4aae-9070-920e771aef91">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>This may come as bonus subsection but let us break down the <em>Dockerfile</em> of the repository, which is a recipe for the above mentioned Docker image. This is a course in scientific computing, after all.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=396b1c60-b403-4e1f-9de0-c539e86b04c3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The first section specifies the base image for this recipe, in our case Ubuntu LTS edition.<br/>
+This is followed by a few lines of my own metadata specification for the image (<code>LABEL</code> keyword).<br/>
+Finally, we set two important environmental variables inside the container:</p>
+<ul>
+<li><code>LANG=C.UTF-8</code> : This variable defines the default locale for the container. In this case, it is set to use the UTF-8 character encoding, which is a widely used character encoding for internationalization and multilingual support</li>
+<li><code>DEBIAN_FRONTEND=noninteractive</code> : This variable is used by many package managers (such as <code>apt</code>) to control their interaction mode. By setting it to noninteractive, you are telling the package manager not to prompt for any user input during package installations or upgrades. This is useful in automated build scenarios where there may not be a terminal for interactive input (as the case is for a Docker image build process)</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7524,17 +7627,14 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=82f73a2d-ad28-4c92-8e11-2090e9a0f576">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c440e352-fb78-44b7-856c-8ef1e7595aef">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span>
-</pre></div>
-</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>In the next secion we install all previously listed dependencies. The official Docker image of <em>Ubuntu 22.04</em> do not come with these preinstalled therefore we shall use <code>apt</code> command to include them into our course-dedicated image. Upon completed installation we create a symbolic link to the Python interpreter (<code>python</code> points to the new <code>python3</code>) and clean up all the temporary files created during the process.</p>
 </div>
 </div>
 </div>
@@ -7547,7 +7647,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <div class="highlight"><pre><span></span><span class="c">##### SYSTEM PACKAGES #####</span>
 <span class="k">RUN</span><span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>make<span class="w"> </span>cmake<span class="w"> </span>wget<span class="w"> </span>r-base<span class="w"> </span>python3-pip<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>make<span class="w"> </span>cmake<span class="w"> </span>wget<span class="w"> </span>g++<span class="w"> </span>r-base<span class="w"> </span>python3-pip<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="o">&amp;&amp;</span><span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/bin/python<span class="w"> </span>python<span class="w"> </span>/usr/bin/python3<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt<span class="w"> </span>autoremove<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt<span class="w"> </span>clean<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
@@ -7556,17 +7656,14 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=30895516-e11b-4940-81dc-65b76b6c6326">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a3e18850-d0ca-4832-8af4-2254fc66f172">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span>
-</pre></div>
-</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The last part of the <em>Dockerfile</em> copies the necessary course materials into the Docker image, sets a working directory inside and specifies the the default command and/or parameters that will be executed when a container based on the Docker image is run.</p>
 </div>
 </div>
 </div>
@@ -7583,6 +7680,42 @@ a.anchor-link {
 
 <span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">"/bin/bash"</span><span class="p">]</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=914833bd-a7d1-48e3-8f35-cc4215a18e86">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>A complete list of all the <em>Dockerfile</em> keywords is available at:<br/>
+<a href="https://docs.docker.com/engine/reference/builder/">https://docs.docker.com/engine/reference/builder/</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=455dac9f-ccb9-4c90-b94f-e4bb40d747a9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Final-words">Final words<a class="anchor-link" href="#Final-words">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=22fe544c-e926-4f56-9d03-a26fc9d813fc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>All in all, this short session was dedicated to setting up desired workspace for the whole course.<br/>
+Regardless whether that would be on your own operating system or inside a Docker container.<br/>
+<strong>Please make sure you are prepared before progressing any further.</strong></p>
 </div>
 </div>
 </div>
