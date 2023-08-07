@@ -12,15 +12,11 @@
 
     "privileged": true,
 
+    "workspaceFolder": "/root/sessions"
+
     "customizations": {
         "codespaces": {
             "openFiles": []
-        },
-        "vscode": {
-            "settings": {},
-            "extensions": [
-                "ms-vsliveshare.vsliveshare"
-            ]
         }
     }
 
