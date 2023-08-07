@@ -3,7 +3,7 @@ FROM ubuntu:22.04
 
 ##### METADATA #####
 LABEL base.image="ubuntu:22.04"
-LABEL version="1.1.0"
+LABEL version="1.1.1"
 LABEL software="efcomp"
 LABEL software.description="Efficient scientific computing in Python/R/C++"
 LABEL software.website="https://github.com/AngryMaciek/efcomp"
@@ -18,7 +18,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 ##### SYSTEM PACKAGES #####
 RUN apt update \
-  && apt install -y make cmake wget g++ r-base python3-pip \
+  && apt install -y make cmake wget g++ r-base python3-pip vim \
   && update-alternatives --install /usr/bin/python python /usr/bin/python3 1 \
   && apt autoremove -y \
   && apt clean -y \
