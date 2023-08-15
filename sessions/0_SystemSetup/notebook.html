@@ -7489,9 +7489,10 @@ Please make sure you have the following software installed and available:</p>
 <li><em>g++</em></li>
 <li><em>r-base</em></li>
 <li><em>python3 + pip</em></li>
+<li><em>vim</em></li>
 </ul>
 <p>In case any of those is missing in your system you may easily install them with the <code>apt</code> package manager:</p>
-<pre><code>apt install -y make cmake wget g++ r-base python3-pip
+<pre><code>apt install -y make cmake wget g++ r-base python3-pip vim
 </code></pre>
 </div>
 </div>
@@ -7510,6 +7511,7 @@ wget --version
 g++ --version
 R --version
 python3 --version
+vim --version
 </code></pre>
 </div>
 </div>
@@ -7692,6 +7694,30 @@ Finally, we set two important environmental variables inside the container:</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>A complete list of all the <em>Dockerfile</em> keywords is available at:<br/>
 <a href="https://docs.docker.com/engine/reference/builder/">https://docs.docker.com/engine/reference/builder/</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=683969c4-4c21-4cd2-be15-2c6e8db95b05">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="GitHub-Codespaces">GitHub Codespaces<a class="anchor-link" href="#GitHub-Codespaces">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=db95ad7f-55b5-4a84-9ac3-e3c42c7b71b3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>If both of the suggested methods fail for you (i.e. no Linux machine available, Docker set up fails) there is one more alternative to try out, provided you have a GitHub account. We may "hack" the built-in <em>Codespaces</em> mechanism and use it not for a development environment but for a cloud-based execution container. Read more about GitHub Codespaces under <a href="https://github.com/features/codespaces">this link</a>.</p>
+<p>I have prepared a codespace recipe for this repository to start in the same container as described above.</p>
+<p>In order to start the environment please navigate to my repository page and then click the green button <code>Code</code>, followed by <code>Create codespace on master</code>. A new interactive development environment should start with a Visual Studio code IDE. The IDE part is not as relevant as the fact that we have an interactive bash shell running inside the project-specific container.</p>
 </div>
 </div>
 </div>

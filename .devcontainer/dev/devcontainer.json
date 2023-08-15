@@ -2,8 +2,6 @@
 
     "name": "dev",
 
-    "build": { "dockerfile": "../Dockerfile" },
-
     "hostRequirements": {
         "cpus": 2,
         "memory": "4gb",
@@ -11,8 +9,6 @@
     },
 
     "privileged": true,
-
-    "workspaceFolder": "/root/sessions",
 
     "customizations": {
         "codespaces": {
