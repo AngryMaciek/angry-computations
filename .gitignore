@@ -1,2 +1,9 @@
 .DS_Store
 .ipynb_checkpoints
+
+rapidcsv.h
+catch_amalgamated.cpp
+catch_amalgamated.hpp
+arma_uniform_matrix_with_headers.csv
+arma_uniform_matrix.csv
+Eigen/
