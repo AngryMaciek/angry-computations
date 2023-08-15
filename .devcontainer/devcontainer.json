@@ -1,6 +1,6 @@
 {
 
-    "name": "dev",
+    "name": "user",
 
     "build": { "dockerfile": "../Dockerfile" },
 
