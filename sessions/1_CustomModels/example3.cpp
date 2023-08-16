@@ -4,7 +4,7 @@
 
 int main(int argc, char* argv[]){
 
-    // construct CWD-independent path to the input file
+    // construct PWD-independent path to the input file
     std::filesystem::path CWD = std::filesystem::current_path();
     std::filesystem::path EXECPATH = (CWD / argv[0]).parent_path();
     rapidcsv::Document doc(
