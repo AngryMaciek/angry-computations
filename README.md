@@ -12,6 +12,13 @@ postgraduate-level monographic course dedicated to efficient scientific computin
 Its main focus are the interfacing mechanisms between langauges widely used and popular
 amongst data scientists: _Python_ and _R_ to a low-level but much faster _C++_.
 
+### Motivation
+
+The course contains various examples of how to carry out
+efficient calculations in _C++_ I have collected over my PhD time.
+General data processing may be executed in _Python_/_R_ whereas the core
+of the program should be exported into an optimised low-level language for fast operations.
+
 ### Scope & target audience 🙋‍♀️
 
 (general info: HOW, not WHAT)

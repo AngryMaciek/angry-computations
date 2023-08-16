@@ -2,7 +2,7 @@
 
     "name": "user",
 
-    "build": { "dockerfile": "../Dockerfile" },
+    "build": { "dockerfile": "../../Dockerfile" },
 
     "hostRequirements": {
         "cpus": 2,
