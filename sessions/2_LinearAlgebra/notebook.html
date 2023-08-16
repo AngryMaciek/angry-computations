@@ -7446,6 +7446,40 @@ a.anchor-link {
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fbcb5fe1-4d2a-4255-9994-92848808da3f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-bash"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=62961619-7504-46bb-afea-bf943b3df7bc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The following repository contains various examples of how to carry out
+efficient calculations in <em>C++</em> I have collected over my PhD time.
+General data processing may be executed in <em>Python</em>/<em>R</em> whereas the core
+of the program may be exported into the optimised low-level language for fast operations.</p>
+<h3 id="numDeriv.c">numDeriv.c<a class="anchor-link" href="#numDeriv.c">¶</a></h3><p>This directory contains a reimplementation of the well-known <a href="https://cran.r-project.org/web/packages/numDeriv/index.html">numDeriv package</a> (dedicated to scientific computing) from R into C static library that can be later included in C or C++ code. Although the implementation is based on numDeriv version: 2016.8-1.1 there are a few key notes to keep in mind:</p>
+<ul>
+<li>Precise calculations are done using Richardson's extrapolation; parameters for the method are explicit arguments for the library functions but the accuracy may depend on the objective function and can vary for a given set of parameters values.</li>
+<li>Side derrivatives are not implemented.</li>
+<li>Objective functions can have a vector argument but scalar value is a requirement ($f:R^N -&gt; R$).</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0a5f1de0-4578-4e18-a481-3b1cae4d7f0d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7453,13 +7487,183 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>This is a template for a <em>Bash</em> notebook in your new project. 🙂<br/>
-Please remember to nicely document all your work in <em>Markdown</em> cells (like this one) using <a href="https://www.markdownguide.org/basic-syntax/">Markdown cheatsheet</a>.<br/>
-By the way: did you know that these cells know how to parse $\TeX$ too?</p>
+<h3 id="angry-statistical-computing">angry-statistical-computing<a class="anchor-link" href="#angry-statistical-computing">¶</a></h3><p>Toy exampes of how to use C++ <a href="http://arma.sourceforge.net/">Armadillo</a> library for linear algebra and simple statistics as well as other custom functions useful for statistical modelling. These resources should be enough to implement complex Bayesian models, fit the parameters efficiently (likelihood optimization) and minimize the runtime on big datasets. Functions' logic and sygnatures are described within the main source file of this directory. Most notably, we shall use three additional C files with external procedures:</p>
+<ul>
+<li><code>numDeriv.c</code>: as above, functions to approximate gradient and hessian of a given multivariate function</li>
+<li><code>zeroin.c</code>: root finding for an univariate function</li>
+<li><code>modoptim.c</code>: a modified version of the C file with a method to minimize a given multivariate function</li>
+</ul>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a53f89ee-8599-4334-b604-23f5f9162428">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1c596906-34f2-4b77-92e2-e7ce1a31d59a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>AngryStatisticalComputing:
+runs-on: ubuntu-22.04
+defaults:
+run:
+working-directory: ./angry-statistical-computing
+steps:</p>
+<pre><code>  - name: Checkout Repository
+    uses: actions/checkout@v2
+
+  # Armadillo requires BLAS and LAPACK for marix operations
+  # cmake is required to build Armadillo
+  - name: Install BLAS &amp; LAPACK &amp; cmake
+    run: sudo apt install cmake libopenblas-dev liblapack-dev
+
+  - name: Download Armadillo
+    run: |
+      wget https://sourceforge.net/projects/arma/files/armadillo-12.4.0.tar.xz
+      tar -xf armadillo-12.4.0.tar.xz
+
+  - name: build &amp; install Armadillo
+    run: |
+      cd armadillo-12.4.0
+      cmake .
+      make
+      sudo make install
+
+  # compile C++ tests
+  # (all descriptions inside the source code)
+  - name: Compile examples
+    run: g++ main.cpp -o asc -DARMA_DONT_USE_WRAPPER -lopenblas -llapack -std=c++11 -O2
+
+  - name: Execute test program
+    run: ./asc</code></pre>
+</div>
+</div>
+</div>
+</div>
+  numDerivc:
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: ./numDeriv.c
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      # generate a full Makefile.
+      # By default the library will be installed under `~/lib`
+      # (compiled file under `~/lib/lib`, header file under `~/lib/include`).
+      # The prefix path might be adjusted in the configure file if needed.
+      - name: configure (make)
+        run: ./configure
+
+      # build a static library
+      - name: build (make)
+        run: make
+
+      # copy the static library to the lib directory
+      - name: install (make)
+        run: make install
+
+      # remove build files from the working directory
+      - name: clean (make)
+        run: make clean
+
+      # provide information to the linker: full path to the static library.
+      # As the library requires math.h it is necessary to provide `-lm` to the linker.
+      # Also, the library is written in C99 standard.
+      - name: compile tests
+        run: gcc test.c -I ~/lib/include/ ~/lib/lib/numDeriv.a -o numDeriv -std=c99 -lm
+
+      # Results have been compared to exact solutions and approximations calculated in R.
+      # (expected values are commented in the source code)
+      - name: execute tests
+        run: ./numDeriv
+
+      # remove installed files
+      - name: uninstall (make)
+        run: make uninstall
+#
+# Makefile template for build and
+# installation of the C library.
+#
+
+CC = gcc
+CFLAGS = -O2 -std=c99
+SRC = numDeriv.c
+HDR = $(SRC:.c=.h)
+OBJ = $(SRC:.c=.o)
+LIB = $(OBJ:.o=.a)
+
+.PHONY: all install clean uninstall
+
+# =========================================================
+# Build
+# =========================================================
+
+all: $(LIB)
+
+# Create an object file
+$(OBJ):
+	$(CC) $(CFLAGS) -c -o $@ $(SRC)
+
+# Create a static library file
+$(LIB): $(OBJ)
+	ar rcs $@ $&lt;
+
+# =========================================================
+# Install
+# =========================================================
+
+install: {PREFIX}/lib/$(LIB) {PREFIX}/include/$(HDR)
+
+# Create top-level directory for the libraries
+{PREFIX}:
+	mkdir -p $@;
+
+# Create top-level directory for the static library files
+{PREFIX}/lib:
+	mkdir -p $@;
+
+# Create top-level directory for the headers
+{PREFIX}/include:
+	mkdir -p $@;
+
+# Copy the library file into the right directory
+{PREFIX}/lib/$(LIB): $(LIB) {PREFIX}/lib
+	cp $&lt; $@
+
+# Copy the header file into the right directory
+{PREFIX}/include/$(HDR): $(HDR) {PREFIX}/include
+	cp $&lt; $@
+
+# =========================================================
+# Clean
+# =========================================================
+
+# Remove the build files
+clean:
+	rm -f $(OBJ);
+	rm -f $(LIB);
+
+# =========================================================
+# Uninstall
+# =========================================================
+
+# Remove the top-level directories
+uninstall:
+	rm -f {PREFIX}/lib/$(LIB);
+	rm -f {PREFIX}/include/$(HDR);
+	if [ $$(ls -a1 {PREFIX}/lib | wc -l)==2 ]; then \
+		rm -rf {PREFIX}/lib; \
+	fi;
+	if [ $$(ls -a1 {PREFIX}/include | wc -l)==2 ]; then \
+		rm -rf {PREFIX}/include; \
+	fi;
+	if [ $$(ls -a1 {PREFIX} | wc -l)==2 ]; then \
+		rm -rf {PREFIX}; \
+	fi;
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a53f89ee-8599-4334-b604-23f5f9162428">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
