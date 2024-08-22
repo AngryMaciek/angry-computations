@@ -2,7 +2,6 @@
 [![ci](https://github.com/AngryMaciek/efcomp/workflows/ci/badge.svg?branch=master)](https://github.com/AngryMaciek/efcomp/actions?query=workflow%3Aci)
 [![Docker](https://badgen.net/badge/icon/docker?icon=docker&label)](https://hub.docker.com/r/angrymaciek/efcomp)
 [![pre-commit](https://img.shields.io/badge/pre--commit-+-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8001609.svg)](https://doi.org/10.5281/zenodo.8001609)
 
 ## Advanced methods for efficient scientific computing in Python/R/C++
